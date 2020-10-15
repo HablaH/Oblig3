@@ -17,11 +17,27 @@ const model = {
             newAlternative: '',
             question: 'Hvem er den tøffeste læreren ved GET Academy?',
             options: ['Geir', 'Eskil', 'Terje'],
+            votes:[],
             usersCanAddAlternatives: true,
         },
     },
 
-    polls: [],
+    polls: [
+        {
+            pollId: 1,
+            question: 'Hvem er den tøffeste læreren ved GET Academy?',
+            options: ['Geir', 'Eskil', 'Terje'],
+            usersCanAddAlternatives: true,
+            votes:['Geir'],
+        },
+        {
+            pollId: 2,
+            question: 'Hvor bor Harald?',
+            options: ['Oslo', 'Kviteseid', 'Ethiopia'],
+            usersCanAddAlternatives: false,
+            votes: ['Oslo','Kviteseid'],
+        },
+    ],
 };
 
 /*
