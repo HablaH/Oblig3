@@ -3,7 +3,7 @@ function getCurrentPoll() {
     // return model.polls.filter(p => p.id === pollId)[0];
 
     for (let poll of model.polls) {
-        if (poll.id === pollId) return poll;
+        if (poll.pollId === pollId) return poll;
     }
     return null;
 }

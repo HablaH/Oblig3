@@ -2,12 +2,17 @@ function createOrUpdatePoll() {
     const inputObj = model.inputs.createPoll;
 
     model.polls.push({
-        isOpen: true,
-        usersCanAddAlternatives: inputObj.usersCanAddAlternatives,
+        pollId: inputObj.pollId,        
         question: inputObj.question,
         options: [...inputObj.options],
-        votes: {},
+        usersCanAddAlternatives: inputObj.usersCanAddAlternatives,
+        votes: { ...inputObj.votes},
     });
 
+    updateView();
+}
+
+function addAlternative() {
+    inputObj.options.push(inputObj.newAlternative);
     updateView();
 }

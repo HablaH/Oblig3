@@ -1,6 +1,6 @@
 const model = {
     app: {
-        currentPoll: 1,
+        currentPoll: null,
         loggedInUser: 'per',
         currentPage: 'createPoll',
     },

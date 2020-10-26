@@ -34,7 +34,7 @@ function updateViewCreateVotePage() {
             value="${model.inputs.createPoll.newAlternative}"
             oninput="model.inputs.createPoll.newAlternative=this.value"
         />
-        <button>Legg til alternativ</button>
+        <button onclick="addAlternative()">Legg til alternativ</button>
         <p>&nbsp;</p>
         <button onclick="createOrUpdatePoll()" style="font-size: 150%">${buttonText} spørreundersøkelse</button>
     

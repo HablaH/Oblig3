@@ -7,6 +7,8 @@ function filterPollByPollId() {
 
 function selectPoll(i) {
     model.app.currentPoll = i;
+    model.inputs.createPoll = getCurrentPoll();
+    model.inputs.createPoll['newAlternative'] = '';
     changePage('createPoll');
 }
 
