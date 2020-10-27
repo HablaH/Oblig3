@@ -6,12 +6,13 @@ function updateViewCreateVotePage() {
     const hasVotes = poll !== null && Object.keys(poll.votes).length > 0;
     const disableInput = hasVotes ? 'disabled' : '';
 
+
     document.getElementById('app').innerHTML = `        
 
         <h3>Spørsmål</h3>
         <input 
             type="text" 
-            value="${pageInputs.question}" 
+            value="${model.inputs.createPoll.question}" 
             size="80" 
             oninput="model.inputs.createPoll.question=this.value" 
             ${disableInput}

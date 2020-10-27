@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -12,15 +12,21 @@
     <div id="qunit"></div>
     <div id="qunit-fixture"></div>
     <script src="https://code.jquery.com/qunit/qunit-2.10.1.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/createPollPageView.js"></script>
     <script src="js/createPollPageController.js"></script>
+    <script src="js/votePageView.js"></script>
+    <script src="js/votePageController.js"></script>
+    <script src="js/overviewPageView.js"></script>
+    <script src="js/overviewPageController.js"></script>
     <script>
-        const model = {};
+        
+        function updateView() { }
 
-        function updateView() {}
+        QUnit.module('Checks if current page changes, and that it gets the correct pollId', function () {
 
-        QUnit.module('createPollPage', function() {
-
-            QUnit.test('create poll', function(assert) {
+            QUnit.test('create poll', function (assert) {
                 // arrange
                 model.inputs = {
                     createPoll: {
@@ -34,23 +40,11 @@
 
                 // act
                 createOrUpdatePoll();
+                selectPoll(0);
 
-                // assert
-                const expectedPollObj = {
-                    isOpen: true,
-                    usersCanAddAlternatives: true,
-                    question: 'Hvem er den tøffeste læreren ved GET Academy?',
-                    options: ['Geir', 'Eskil', 'Terje'],
-                    votes: {},
-                };
-                assert.equal(model.polls.length, 1);
-                assert.deepEqual(model.polls[0], expectedPollObj);
-                assert.equal(model.inputs.createPoll.pollId !== null, true);
+                assert.equal(model.app.currentPage, 'createPoll');
+                assert.deepEqual(model.polls[0].pollId, model.inputs.createPoll.pollId);
 
-            });
-
-            QUnit.test('update poll', function(assert) {
-                assert.equal(1, 2);
             });
         });
     </script>

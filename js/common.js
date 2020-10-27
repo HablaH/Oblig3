@@ -7,3 +7,12 @@ function getCurrentPoll() {
     }
     return null;
 }
+
+function changePage(page) {
+    model.app.currentPage = page;
+    updateView();
+}
+
+function resetCreatePollInputs() {
+
+}
