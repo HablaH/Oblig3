@@ -1,6 +1,3 @@
-
-
-
 function updateViewOverview() {
     model.app.currentPoll = null;
     document.getElementById('app').innerHTML = `
